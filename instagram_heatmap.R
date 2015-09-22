@@ -4,11 +4,16 @@
 # Tues, 9/22/15
 # -------------------------------------------------------------
 
+# Get --------------------------------------------------------------
 
-instagram.data <- read.table(file="instagram.txt",
-							 header=TRUE,
-							 sep= "",
-							 stringsAsFactors=FALSE)
+library(RCurl)
+
+text.file <- getURL("https://raw.githubusercontent.com/etsuprun/crowdattraction/master/instagram.txt")
+
+instagram.data <- read.table(text = text.file,
+				   header=TRUE,
+				   sep= "",
+				   stringsAsFactors=FALSE)
 
 
 # Mung --------------------------------------------------------------
