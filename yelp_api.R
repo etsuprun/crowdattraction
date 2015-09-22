@@ -1,7 +1,7 @@
-consumerKey = 'b-QAUged3VgxDWW_ZTpmUQ'
-consumerSecret	= 'f9jH4UbngxMDLYI-m-wYtuFpo-I'
-token	= 'QTi4YkpsnVHk22CSYFOTvaVPpYW2bH33'
-token_secret =	'-FA53vHGue_spUII5leac3Vbo5s'
+consumerKey = 'xxx'
+consumerSecret	= 'xxx'
+token	= 'xxx'
+token_secret =	'xxx'
 library(httr)
 library(httpuv)
 library(jsonlite)
