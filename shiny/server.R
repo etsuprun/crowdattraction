@@ -3,6 +3,8 @@ require(data.table)
 require(plyr)
 library(ggplot2)
 library(lubridate)
+library(colorRamps)
+library(RCurl)
 instagram<-
         data.table(
                 read.csv(
@@ -126,6 +128,9 @@ PlotDay <-function(day){
                 
                 p <- ggplot(df,aes(x=x,y=y,group=1)) + geom_bar(stat="identity",fill="blue") + scale_y_continuous(name="Percentage of Vistors",limits=c(0,5)) + 
                         geom_line(color="purple") + xlab(paste0("Hour of ",day)) + ggtitle("Visitors Percentage by Time of Day")
+                p <- p + theme(plot.title = element_text(size = 25,face="bold")) + 
+                        theme(axis.title = element_text(size=20,face="bold"))
+                
                 return(p)
                 # plot(averages,main=day,ylim=c(0,5),xaxt='n',ylab='Percentage of Vistors')
                 # 
@@ -153,6 +158,9 @@ PlotDay <-function(day){
                 
                 p <- ggplot(df,aes(x=x,y=y,group=1)) + geom_bar(stat="identity",fill="blue") + scale_y_continuous(name="Percentage of Vistors",limits=c(0,5)) + 
                         geom_line(color="purple") + xlab(paste("Hour of ",day)) + ggtitle("Visitors Percentage by Time of Day")
+                p <- p + theme(plot.title = element_text(size = 25,face="bold")) + 
+                        theme(axis.title = element_text(size=20,face="bold"))
+                
                 return(p)
                 # plot(averages, main='Fri',ylim=c(0,5),xant='n',ylab='Percentage of Vistors')
                 # 
@@ -196,6 +204,8 @@ PlotHour <- function (hour){
         p <- ggplot(df,aes(x=x,y=y,group=1)) + geom_bar(stat="identity",fill="blue") + scale_y_continuous(name="Percentage of Vistors",limits=c(0,5)) + 
                 geom_line(color="purple") + xlab(paste0("Day of the Week at ",paste0(ifelse(hour<12,paste(hour,"AM"),paste(hour-12,"PM"))))) + 
                 ggtitle("Visitors Percentage by Day of Week")
+        p <- p + theme(plot.title = element_text(size = 25,face="bold")) + 
+                theme(axis.title = element_text(size=20,face="bold"))
         return(p)
         # plot(averages,main=hour,ylim=c(0,5),xaxt='n',ylab='Percentage of Vistors')
         # 

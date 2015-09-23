@@ -53,14 +53,19 @@ shinyUI(pageWithSidebar(
                                  
                                  helpText("Note: After you define the date range, the visualization of 
                                           historical data will get automatically updated.")
-                ) 
+                ),
+                conditionalPanel(condition="input.conditionedPanels==3",
+                                 
+                                 helpText("Heatmap of Historical Visiting Data by week and hour")
+                                 )
         ),
         mainPanel(
                 tabsetPanel(
-                        tabPanel("Plan your Visit", value=1, plotOutput("heatmap"), plotOutput("plotday"), plotOutput("plothour")), 
+                        tabPanel("Plan your Visit", value=1, plotOutput("plotday"), plotOutput("plothour")), 
                         tabPanel("Historical Data", value=2, 
                                  p("The following is a plot of curves for each day within the user 
-                                   specified date range."), br(), plotOutput("histmap"))
+                                   specified date range."), br(), plotOutput("histmap")),
+                        tabPanel("Visiting Heatmap",value=3, plotOutput("heatmap"))
                         , id = "conditionedPanels"
                 )
         )
