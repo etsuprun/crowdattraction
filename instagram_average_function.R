@@ -63,6 +63,13 @@ CalcAverageVisitors <- function(day,hour){
 				   					& hours.and.days$hour <= 17,] )[1]
 
 
+	# totalNum.openingHours <- num.Fri.hours + num.notFri.hours
+
+	# hoursOpen <- 8*6 + 11
+
+	# average.TotalVisitors <- totalNum.openingHours/hoursOpen
+
+
 	totalNum.openingHours <- num.Fri.hours + num.notFri.hours
 
 	
@@ -76,4 +83,7 @@ CalcAverageVisitors <- function(day,hour){
 	averages <- averages *100
 
 } 
+
+
+
 

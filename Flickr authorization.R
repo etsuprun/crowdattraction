@@ -2,8 +2,8 @@
 
 library(httr)
 
-api_key = "bf917821c029972fe265382c49db76a8"
-secret = "5efd8cb8034eb7fb"
+api_key = "YOUR_API_KEY"
+secret = "YOUR_SECRET"
 
 flickr.app <- oauth_app("Prediction",api_key,secret)
 flickr.endpoint <- oauth_endpoint(
